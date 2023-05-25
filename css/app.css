@@ -2,6 +2,63 @@ html{
     font-size: 62.5%;
     box-sizing: border-box; /* sirve para ajustar el model box*/
 }
+body{
+    font-family: 'Lato', sans-serif;
+}
 *,*:before,*:after{
     box-sizing: inherit;
+}
+
+h1,h2,h3{
+    text-align: center;
+    margin: 0;
+    font-size: 4rem;
+}
+.contenedor{
+    padding: 1rem;
+    margin: 0 auto;
+    max-width: 120rem;
+    background-color: red;
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    margin: 0 auto;
+    margin-top: 2rem;
+    width: 50rem;
+    padding: 1rem;
+    gap: 2rem;
+}
+
+.campo{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.campo label,
+.campo select,
+.campo input,
+input{
+    font-size: 1.6rem;
+}
+
+.campo label{
+    flex: 0 0 7rem;
+}
+
+.campo select{
+    flex: 1 0 0 ;
+}
+.campo input{
+    flex: 1 0 0 ;
+}
+
+.saludo{
+    margin: 0 auto;
+   
+    padding: 1rem;
+    font-size: 2.5rem;
 }

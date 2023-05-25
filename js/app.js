@@ -38,7 +38,7 @@ const cola=document.querySelector('.cola');
 formulario1.addEventListener('submit',e=>{
     e.preventDefault();
     let data = Object.fromEntries(new FormData(e.target));
-    let perro1=new Perro(data.nombre,data.edad,data.sexo,data.carrera);
+    let perro1=new Perro(data.nombre,data.edad,data.sexo,data.raza);
     sonido.textContent=perro1.hacerSonido();
     cola.textContent=perro1.moverCola();
 })

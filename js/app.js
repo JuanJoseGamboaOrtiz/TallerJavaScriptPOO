@@ -1,46 +1,31 @@
-class Animal{
-    nombre
-    edad
-    constructor(nombre,edad){
-        this.nombre=nombre;
-        this.edad=edad;
+class Figura{
+    color
+    area
+    constructor(color,area){
+        this.color=color;
+        this.area=area;
     };
 
-    hacerSonido(){
-        return `Sonino del anial`;
+    calcularArea(){
+        return `El area es ${this.area}m^2`;
     };
 };
 
-class Perro extends Animal{
-    constructor(nombre,edad,raza){
-        super(nombre,edad);
-        this.raza=raza;
-    }
 
-    moverCola(){
-        return `Moviendo la cola`;
-    }
-
-    hacerSonido(){
-        return "GUAU GUAU";
-    }
-};
 
 
 //Seleccionar elementos
 
 const formulario1=document.querySelector('#formulario1');
-const sonido=document.querySelector('.sonido');
-const cola=document.querySelector('.cola');
+const area=document.querySelector('.area');
 
 
 
 formulario1.addEventListener('submit',e=>{
     e.preventDefault();
     let data = Object.fromEntries(new FormData(e.target));
-    let perro1=new Perro(data.nombre,data.edad,data.sexo,data.raza);
-    sonido.textContent=perro1.hacerSonido();
-    cola.textContent=perro1.moverCola();
+    let figura1=new Figura(data.color,data.area);
+    area.textContent=figura1.calcularArea();
 })
 
 

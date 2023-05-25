@@ -12,8 +12,8 @@ class Persona{
         return `¿Hola como estás?, mi nombre es ${this.nombre}`;
     };
 
-    static esMayorDeEdad(edad){
-        const resultado= (edad=>18) ? true:false;
+    static esMayorDeEdad(p1){
+        const resultado= (p1>=18) ? true :false;
         return resultado;
     };
 };

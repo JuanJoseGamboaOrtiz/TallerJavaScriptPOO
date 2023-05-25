@@ -1,36 +1,46 @@
-class Persona{
+class Animal{
     nombre
     edad
-    sexo
-    constructor(nombre,edad,sexo){
+    constructor(nombre,edad){
         this.nombre=nombre;
         this.edad=edad;
-        this.sexo=sexo;
     };
 
-    saludar(){
-        return `¿Hola como estás?, mi nombre es ${this.nombre}`;
+    hacerSonido(){
+        return `Sonino del anial`;
     };
+};
 
-    static esMayorDeEdad(p1){
-        const resultado= (p1>=18) ? true :false;
-        return resultado;
-    };
+class Perro extends Animal{
+    constructor(nombre,edad,raza){
+        super(nombre,edad);
+        this.raza=raza;
+    }
+
+    moverCola(){
+        return `Moviendo la cola`;
+    }
+
+    hacerSonido(){
+        return "GUAU GUAU";
+    }
 };
 
 
 //Seleccionar elementos
 
 const formulario1=document.querySelector('#formulario1');
-const saludo=document.querySelector('.saludo');
+const sonido=document.querySelector('.sonido');
+const cola=document.querySelector('.cola');
 
 
 
 formulario1.addEventListener('submit',e=>{
     e.preventDefault();
     let data = Object.fromEntries(new FormData(e.target));
-    let persona1=new Persona(data.nombre,data.edad,data.sexo,data.carrera);
-    saludo.textContent=Persona.esMayorDeEdad(persona1.edad);
+    let perro1=new Perro(data.nombre,data.edad,data.sexo,data.carrera);
+    sonido.textContent=perro1.hacerSonido();
+    cola.textContent=perro1.moverCola();
 })
 
 

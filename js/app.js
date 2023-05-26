@@ -11,14 +11,15 @@ class Figura{
     };
 };
 
-class Circulo extends Figura{
-    constructor(color,area,radio){
+class Rectangulo extends Figura{
+    constructor(color,area,largo,ancho){
         super(color,area);
-        this.radio=radio;
+        this.largo=largo;
+        this.ancho=ancho;
     }
 
     calcularArea(){
-        return this.radio*2*3.1415;
+        return this.largo*this.ancho;
     }
 }
 
@@ -34,8 +35,8 @@ const area=document.querySelector('.area');
 formulario1.addEventListener('submit',e=>{
     e.preventDefault();
     let data = Object.fromEntries(new FormData(e.target));
-    let circulo1=new Circulo(data.color,data.area,data.radio);
-    area.textContent=`El area del circulo es ${circulo1.calcularArea()} m^2`;
+    let rectangulo1=new Rectangulo(data.color,data.area,data.largo,data.ancho);
+    area.textContent=`El area del rectangulo es ${rectangulo1.calcularArea()} m^2`;
 })
 
 

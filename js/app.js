@@ -11,6 +11,16 @@ class Figura{
     };
 };
 
+class Circulo extends Figura{
+    constructor(color,area,radio){
+        super(color,area);
+        this.radio=radio;
+    }
+
+    calcularArea(){
+        return this.radio*2*3.1415;
+    }
+}
 
 
 
@@ -24,8 +34,8 @@ const area=document.querySelector('.area');
 formulario1.addEventListener('submit',e=>{
     e.preventDefault();
     let data = Object.fromEntries(new FormData(e.target));
-    let figura1=new Figura(data.color,data.area);
-    area.textContent=figura1.calcularArea();
+    let circulo1=new Circulo(data.color,data.area,data.radio);
+    area.textContent=`El area del circulo es ${circulo1.calcularArea()} m^2`;
 })
 
 

@@ -45,7 +45,7 @@ formulario1.addEventListener('submit',e=>{
     e.preventDefault();
     let data = Object.fromEntries(new FormData(e.target));
     let gerente1=new Gerente(data.nombre,data.edad,data.sueldo,data.departamento);
-    id.textContent= `El id del Gerente o empleado  es ${Empleado.generarIdEmpleado(gerente1)} `;
+    id.textContent= `El id del Gerente es ${gerente1.id} `;
 })
 
 
